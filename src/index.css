@@ -1,0 +1,16 @@
+.logoNavBar {
+    width: 19rem;
+}
+
+.logoCart {
+    width: 30px;
+}
+.logoCart:hover{
+    cursor: pointer;
+}
+
+p {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 20px;
+}
