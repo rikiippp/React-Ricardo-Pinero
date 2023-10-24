@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Card, CardBody, Stack, Heading, Divider, CardFooter, ButtonGroup, Button, Text } from '@chakra-ui/react'
+import { Card, CardBody, Stack, Heading, Divider, CardFooter, Text } from '@chakra-ui/react'
 import ItemCount from "./ItemCount";
 
 
