@@ -1,9 +1,6 @@
-import ItemList from './ItemList'
-import { useParams } from 'react-router-dom';
+import ItemDetail from './ItemDetail'
 
-const ItemListContainer = () => {
-
-  const { categoria } = useParams()
+const ItemDetailContainer = () => {
 
   const productos = [
     { id: 1, img: "../src/assets/image/aparador.jpg", categoria: "Muebles", nombre: "Aparador de madera", descripcion: "Descripcion del producto", precio: 139 },
@@ -37,14 +34,12 @@ const ItemListContainer = () => {
       console.log(error)
     })
 
-  const filtrarProductos = productos.filter((producto) => producto.categoria === categoria)
-
   return (
     <>
-      {categoria ? <ItemList productos={filtrarProductos} /> : <ItemList productos={productos} />}
-
+    <ItemDetail productos={productos}/>
+  
     </>
   )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

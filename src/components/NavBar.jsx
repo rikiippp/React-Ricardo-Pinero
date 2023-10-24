@@ -1,6 +1,7 @@
 import logoNav from '../assets/logo_hogar.png';
 import { Box, Flex, Menu, MenuButton, MenuList, MenuItem, Spacer } from '@chakra-ui/react';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -9,7 +10,9 @@ const NavBar = () => {
       <Box as="nav" bg="#07110e">
         <Flex alignItems="center" justifyContent="space-between">
           <Box p="4">
-            <a href="./index.html"><img className='logoNavBar' src={logoNav} alt="Logo Navbar" /></a>
+            <Link to={"/"}>
+            <img className='logoNavBar' src={logoNav} alt="Logo Navbar" />
+            </Link>
           </Box>
           <Spacer />
           <Box>
@@ -18,15 +21,23 @@ const NavBar = () => {
                 Productos
               </MenuButton>
               <MenuList border="1px" borderColor="#07110e">
-                <MenuItem>Lamparas</MenuItem>
+                <Link to={`/categorias/${"Iluminación"}`}>
+                <MenuItem>Iluminación</MenuItem>
+                </Link>
+                <Link to={`/categorias/${"Muebles"}`}>
                 <MenuItem>Muebles</MenuItem>
-                <MenuItem>Luces</MenuItem>
+                </Link>
+                <Link to={`/categorias/${"Plantas"}`}>
+                <MenuItem>Plantas</MenuItem>
+                </Link>
               </MenuList>
             </Menu>
           </Box>
           <Spacer />
           <Box p="10">
+            <Link to={"/cart"}>
             <CartWidget/>
+            </Link>
           </Box>
         </Flex>
       </Box>
