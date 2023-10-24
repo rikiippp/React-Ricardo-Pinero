@@ -4,5 +4,5 @@ Se trata de un mini e-commerce de muebleria, su funcionalidad es agregar product
 ## Dependencias
 Se esta utilizando la libreria de `Chakra UI` y estilos css.
 ## Vista previa
-![HogarEnArmonia](https://github.com/rikiippp/React-Ricardo-Pinero/assets/137220717/befa8c9a-8726-4f93-ab6a-49a91485c3fb)
+![HogarEnArmonia](https://github.com/rikiippp/React-Ricardo-Pinero/assets/137220717/77ea2a3c-2eb7-4d21-a645-e1aaf20c9904)
 ## Autor:  Ricardo Piñero
