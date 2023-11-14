@@ -2,7 +2,6 @@ import {Card, CardBody, Stack, Heading, Divider, CardFooter, ButtonGroup, Button
 import { Link } from 'react-router-dom'
 
 
-
 const Item = ({nombre, id, img}) => {
 
 

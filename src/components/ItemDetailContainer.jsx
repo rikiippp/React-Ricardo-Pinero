@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
@@ -16,6 +17,8 @@ const ItemDetailContainer = () => {
 
   ];
 
+
+
   const mostrarProductos = new Promise((resolve, reject) => {
     if (productos.length > 0) {
       setTimeout(() => {
@@ -27,17 +30,38 @@ const ItemDetailContainer = () => {
   })
 
   mostrarProductos
-    .then((resultado) => {
-      console.log(resultado)
+    .then(() => {
     })
     .catch((error) => {
       console.log(error)
     })
 
+
+  const [cart, setCart] = useState([])
+
+  const addProductToCart = (product, quantity) => {
+    const indexItem = cart.findIndex(item => item.id === product.id);
+
+    if (indexItem !== -1) {
+      // El producto ya está en el carrito, actualiza la cantidad
+      const updatedCart = [...cart];
+      updatedCart[indexItem].quantity += quantity;
+      setCart(updatedCart);
+    } else {
+      // El producto no está en el carrito, agrégalo
+      setCart(prevCart => [...prevCart, { ...product, quantity }]);
+    }
+
+    // Muestra el contenido del carrito en la consola (puedes ajustar esto según tu lógica real)
+    console.log("Contenido del carrito después de agregar:", cart);
+  };
+
+
+
   return (
     <>
-    <ItemDetail productos={productos}/>
-  
+      <ItemDetail productos={productos} addProduct={addProductToCart} />
+
     </>
   )
 }
