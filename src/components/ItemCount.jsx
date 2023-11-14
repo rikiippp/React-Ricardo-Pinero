@@ -3,6 +3,7 @@ import { Flex, Box, Button, Spacer } from '@chakra-ui/react';
 import { CartContext } from '../context/cartContext';
 
 const ItemCount = ({ product }) => {
+
     const [quantity, setQuantity] = useState(0);
     const [cart, setCart, addProduct, , , , , isInCart] = useContext(CartContext);
 
@@ -29,7 +30,7 @@ const ItemCount = ({ product }) => {
             }
 
             setQuantity(0);
-            
+
             console.log("Contenido del carrito después de añadir al carrito:", cart);
 
         }
@@ -44,9 +45,7 @@ const ItemCount = ({ product }) => {
             </Box>
             <Spacer />
             <Box pl={4}>
-                <Button bg='#4ca83a' _hover={{ background: '#2e5f25', color: 'white' }} onClick={addToCart}>
-                    Agregar Al Carrito
-                </Button>
+                <Button bg='#4ca83a' _hover={{ background: '#2e5f25', color: 'white' }} onClick={addToCart}>Agregar Al Carrito</Button>
             </Box>
         </Flex>
     );
