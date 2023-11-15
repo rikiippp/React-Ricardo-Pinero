@@ -9,12 +9,12 @@ const Cart = () => {
 
   const removeProductHandle = (id) => removeProduct(id);
 
-  return cantidadProductosCart !== 0 ? (
-    <div className="flex flex-col justify-center m-2">
+  return cantidadProductosCart() !== 0 ? (
+    <div>
       {cart && cart.map((product) => {
         return (
           <div key={product.id} >
-            <img src={product.img} alt="IMAGE" />
+            <img src={product.img} alt="img" />
             <div>
               <p >{product.nombre}</p>
               {product.descripcion}
@@ -30,10 +30,12 @@ const Cart = () => {
         );
       })}
       <div>
-        <h2 >The total is: ${obtenerTotalPrecioCart}</h2>
+        <h2 >total a pagar: ${obtenerTotalPrecioCart()}</h2>
       </div>
 
-      <Link to={`/`}>Go to payment page!</Link>
+      <Link to={`/`}>
+        <button className="buttonCart">Finalizar compra</button>
+      </Link>
     </div>
   ) : (
     <CartVacio />

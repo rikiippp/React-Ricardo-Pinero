@@ -13,28 +13,28 @@ export const CartProvider = ({ children }) => {
             updateCart[indexItem].quantity += quantity
             setCart(updateCart)
         } else {
-            setCart((prev) => [...prev, { ...product, quantity: quantity }])
+            setCart((prev) => [...prev, { ...product, quantity }])
         }
+
     }
 
-    const removeProduct = (itemId) => {
-        const newCart = cart.filter(producto => producto.id !== itemId)
+    const removeProduct = (productId) => {
+        const newCart = cart.filter(producto => producto.id !== productId)
         setCart(newCart)
     }
 
-    const cantidadProductosCart = () => cart.length
-
     const obtenerTotalPrecioCart = () => cart.reduce((acc, { precio, quantity }) => acc + precio * quantity, 0)
-
+    
     const limpiarCart = () => {
         setCart([])
     }
     
+    const cantidadProductosCart = () => cart.length
 
     const isInCart = (id) => cart.findIndex(product => product.id === id)
 
     return (
-        <CartContext.Provider value={[cart, setCart, addProduct, removeProduct, limpiarCart, obtenerTotalPrecioCart, cantidadProductosCart, isInCart]}>
+        <CartContext.Provider value={{cart, addProduct, removeProduct, limpiarCart, obtenerTotalPrecioCart, cantidadProductosCart, isInCart}}>
             {children}
         </CartContext.Provider>
     )

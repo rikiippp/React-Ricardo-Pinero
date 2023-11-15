@@ -56,8 +56,8 @@ const Form = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className='formulario'>
-                <h1>Formulario</h1>
+            <h1>Formulario de envio</h1>
+            <form onSubmit={handleSubmit} className='formulario-compra'>
                 <input type="text" name="name" value={values.name} onChange={handleChange} placeholder="Ingrese su nombre" />
                 <input type="text" name="lastName" value={values.lastName} onChange={handleChange} placeholder="Ingrese su Apellido" />
                 <input type="email" name="email" value={values.email} onChange={handleChange} placeholder="Ingrese su email" />

@@ -1,0 +1,60 @@
+
+/*--ESTILOS CARD--*/
+.card {
+    width: 18rem;
+    height: 50vh;
+    margin: 15px auto;
+    border: 1px solid #9fa6b2;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #9fa6b2;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-body h5 {
+    text-align: center;
+    font-weight: 700;
+}
+
+.card-body button {
+    margin: 30px 0;
+}
+
+/*BOTÓN*/
+.button {
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #FFFFFF !important;
+    font-size: 14px;
+    text-shadow: 1px 1px 0px #285C54;
+    box-shadow: 3px 3px 3px #9fa6b2;
+    padding: 6px 25px;
+    border-radius: 10px;
+    border: 1px solid #398378;
+    background: #398378;
+    background: linear-gradient(to top, #398378, #42968A);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: #FFFFFF !important;
+    background: #398378;
+    background: linear-gradient(to top, #265C4B, #589A8D);
+}

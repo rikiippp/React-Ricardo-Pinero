@@ -6,18 +6,16 @@ import { CartContext } from '../context/cartContext';
 
 
 const CartWidget = () => {
-
-  const {cantidadProductosCart} = useContext(CartContext)
-
+  const { cantidadProductosCart } = useContext(CartContext)
 
   return (
     <Link to={"/cart"}>
       <div>
-      <img className='logoCart' src={ImgCart} alt='Carrito' />
-      <Badge pos="absolute" right="7" top="16" fontSize="18px" bg="#8abe53">{cantidadProductosCart}</Badge>
+        <img className='logoCart' src={ImgCart} alt='Carrito' />
+        <Badge pos="absolute" right="7" top="16" fontSize="18px" bg="#8abe53">{cantidadProductosCart()}</Badge>
       </div>
     </Link>
-    
+
   )
 }
 

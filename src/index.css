@@ -5,6 +5,29 @@
 .logoCart {
     width: 30px;
 }
-.logoCart:hover{
+
+.logoCart:hover {
     cursor: pointer;
+}
+
+
+/*--ESTILOS PAGINA COMPRA--*/
+h1 {
+    text-align: center;
+    margin: 30px;
+
+}
+
+.formulario-compra {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-compra input {
+    margin: 10px 0;
+    width: 40%;
+    padding: 10px;
+    border-radius: 5px;
 }
