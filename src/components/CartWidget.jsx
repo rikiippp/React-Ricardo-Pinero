@@ -12,7 +12,7 @@ const CartWidget = () => {
     <Link to={"/cart"}>
       <div>
         <img className='logoCart' src={ImgCart} alt='Carrito' />
-        <Badge pos="absolute" right="7" top="16" fontSize="18px" bg="#8abe53">{cantidadProductosCart()}</Badge>
+        <Badge pos="absolute" right="7" top="16" fontSize="16px" bg="#8abe53">{cantidadProductosCart()}</Badge>
       </div>
     </Link>
 

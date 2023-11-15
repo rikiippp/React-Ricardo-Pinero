@@ -10,24 +10,219 @@
     cursor: pointer;
 }
 
-
-/*--ESTILOS PAGINA COMPRA--*/
-h1 {
-    text-align: center;
-    margin: 30px;
-
-}
-
-.formulario-compra {
-    width: 80%;
-    margin: auto;
+/*--ESTILOS CARD--*/
+.container-cards {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em;
+    flex-wrap: wrap;
+
 }
 
-.formulario-compra input {
-    margin: 10px 0;
+.card {
+    width: 18rem;
+    height: 50vh;
+    margin: 15px auto;
+    border: 1px solid #9fa6b2;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #9fa6b2;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-body h5 {
+    text-align: center;
+    font-weight: 700;
+}
+
+.card-body button {
+    margin: 30px 0;
+}
+
+/*BOTÓN*/
+.button {
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #FFFFFF !important;
+    font-size: 16px;
+    text-shadow: 1px 1px 0px #285C54;
+    box-shadow: 3px 3px 3px #9fa6b2;
+    padding: 8px 30px;
+    border-radius: 10px;
+    border: 1px solid #398378;
+    background: #398378;
+    background: linear-gradient(to top, #398378, #42968A);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: #FFFFFF !important;
+    background: #398378;
+    background: linear-gradient(to top, #265C4B, #589A8D);
+}
+
+/*--ESTILOS FORMULARIO--*/
+.container-form {
     width: 40%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: 2px solid #3e424233;
+    box-shadow: -1px 1px 58px 24px #3e424233;
+}
+
+.container-form h1 {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.container-input {
+    text-align: center;
+}
+
+.container-input input {
+    margin: 10px 0;
+    width: 90%;
     padding: 10px;
     border-radius: 5px;
+    border-bottom: 2px solid #285C54;
 }
+
+.error {
+    color: red;
+    text-align: left;
+    margin-left: 50px;
+}
+
+/*--BOTON FORMULARIO--*/
+.form {
+    text-align: center;
+}
+
+.button-form {
+    margin: 30px 20px;
+    font-family: arial;
+    font-weight: bold;
+    color: #FFFFFF !important;
+    font-size: 16px;
+    text-shadow: 0px 0px 0px #FFFFFF;
+    box-shadow: 2px 1px 5px #8D3F6F;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 0px solid #533983;
+    background: #533983;
+    background: linear-gradient(to top, #533983, #783983);
+}
+
+.button-form:hover {
+    color: #FFFFFF !important;
+    background: #8D3F6F;
+}
+
+/*--ESTILOS CART--*/
+.container-cart {
+    width: 60%;
+    height: 30vh;
+    margin: auto;
+    text-align: center;
+}
+
+.card-cart {
+    margin: 10px 0;
+    overflow: hidden;
+    display: flex;
+    border-radius: 10px;
+    border: 2px solid #3e424233;
+    box-shadow: -1px 10px 58px 24px #3e424233;
+}
+
+.card-cart img {
+    width: 10rem;
+    height: 22vh;
+    object-fit: cover;
+}
+
+.card-content-cart {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card-content-cart p {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.total-pagar {
+    text-align: center;
+    font-size: 26px;
+    margin-top: 40px;
+}
+
+.button-clearCart {
+    font-family: arial;
+    font-weight: bold;
+    color: #000000 !important;
+    font-size: 16px;
+    text-shadow: 0px 0px 0px #DEDEDE;
+    box-shadow: 2px 1px 1px #90ABB8;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 0px solid #3866A3;
+    background: #B2D4E3;
+    margin: 0 20px;
+}
+
+.button-clearCart:hover {
+    color: #000000 !important;
+    background: #B7A6D8;
+}
+/*--ESILOS CART VACIO--*/
+.containe-cartClean {
+    
+}
+
+/*--ESTILOS NRO DE ORDEN--*/
+.container-order {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #3e424233;
+    box-shadow: -1px 1px 58px 24px #3e424233;
+}
+
+.container-order h3 {
+    width: 80%;
+    margin: 20px auto;
+    font-size: 22px;
+    color: red;
+}
+
+.container-order p {
+    font-size: 18px;
+    font-weight: 500;
+}
+

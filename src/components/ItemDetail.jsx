@@ -1,10 +1,10 @@
-import { useParams } from "react-router-dom";
-import { Card, CardBody, Stack, Heading, Divider, CardFooter, Text, Box, Button } from '@chakra-ui/react';
+import { Card, CardBody, Stack, Heading, CardFooter, Text, Box, Button } from '@chakra-ui/react';
 import ItemCount from "./ItemCount";
 import { useContext, useState } from "react";
 import { CartContext } from "../context/cartContext";
 
 const ItemDetail = ({ producto }) => {
+
 
   const [quantity, setQuantity] = useState(0)
   const { addProduct } = useContext(CartContext)
@@ -16,29 +16,28 @@ const ItemDetail = ({ producto }) => {
 
   const decrementQuantity = () => {
     const resultado = quantity - 1
-    if (quantity >= 0) {
+    if (quantity > 0) {
       setQuantity(resultado);
-    }
+    } 
   };
 
   const addProductToCart = () => addProduct(producto, quantity)
 
   return (
     <>
-      <Card maxW='sm' m='auto' gap='4' key={product.id}>
+      <Card shadow='3px 3px 3px #9fa6b2' border='1px solid #9fa6b2;' maxW='sm' m='20px auto' w='24rem' key={producto.id}>
         <CardBody>
-          <Stack mt='6' spacing='3'>
-            <img src="" alt="Imagenes de los productos" />
-            <Heading size='md'>{product.nombre}</Heading>
+          <Stack>
+            <img src={producto.image} alt="Imagenes de los productos" />
+            <Heading size='md' m='20px 0' fontSize='22px'>{producto.nombre}</Heading>
           </Stack>
-          <Text>{product.descripcion}</Text>
-          <Text>${product.precio}</Text>
+          <Text fontSize='16px'>{producto.descripcion}</Text>
+          <Text fontWeight='bold'>${producto.precio}</Text>
         </CardBody>
-        <Divider />
         <CardFooter>
           <ItemCount incrementar={incrementQuantity} decrementar={decrementQuantity} quantity={quantity} />
           <Box pl={4}>
-            <Button bg='#4ca83a' _hover={{ background: '#2e5f25', color: 'white' }} onClick={addProductToCart}>Agregar Al Carrito</Button>
+            <Button color='white' bg='#533983' _hover={{ background: '#8D3F6F', color: 'white' }} onClick={addProductToCart}>Agregar Al Carrito</Button>
           </Box>
         </CardFooter>
       </Card>

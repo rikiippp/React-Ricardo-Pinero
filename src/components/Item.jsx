@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom'
-import './Item.css'
+import { Card, CardBody, Stack, CardFooter, Heading } from '@chakra-ui/react'
 
 
-const Item = ({ nombre, id, img }) => {
+const Item = ({ nombre, id, image }) => {
 
 
   return (
-    <div className='container-cards'>
       <div className='card' key={id}>
-        <img src={img} alt="image" />
+        <img src={image} alt="image" />
         <div className='card-body'>
           <h5>{nombre}</h5>
           <Link to={`/productos/${id}`} className='button'>
@@ -16,9 +15,6 @@ const Item = ({ nombre, id, img }) => {
           </Link>
         </div>
       </div>
-    </div> 
-
-
   )
 }
 

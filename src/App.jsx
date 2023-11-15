@@ -3,8 +3,8 @@ import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
 import Cart from './components/Cart'
 import ItemDetailContainer from './components/ItemDetailContainer'
-import Form from './components/Form'
 import { CartProvider } from './context/cartContext'
+import Checkout from './components/Checkout'
 
 function App() {
 
@@ -21,9 +21,8 @@ function App() {
           <Route exact path='/cart' element={<Cart />} />
           <Route exact path='/categorias/:categoria' element={<ItemListContainer />} />
           <Route exact path='/productos/:id' element={<ItemDetailContainer />} />
-
+          <Route exac path='/checkout' element={<Checkout />} />
         </Routes>
-      {/* <Form /> */ }
 
       </CartProvider>
     </BrowserRouter>

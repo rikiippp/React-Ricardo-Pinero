@@ -13,21 +13,18 @@ const ItemDetailContainer = () => {
 
     const db = getFirestore()
 
-    const oneItem = doc(db, `${id}`)
+    const oneItem = doc(db, "productos", `${id}`);
 
     getDoc(oneItem).then((snapshot) => {
-      if (snapshot.exists()) {
-        const docs = snapshot.data()
-        setProducto(docs)
-      }
+        if (snapshot.exists()) {
+            setProducto({ id: snapshot.id, ...snapshot.data() });
+        }
     })
-  }, [])
+}, [])
 
 
-  const product = producto.find((producto) => producto.id == id);
-
-  const addProductToCart = (product, quantity) => {
-    const indexItem = cart.findIndex(item => item.id === product.id);
+  const addProductToCart = (producto, quantity) => {
+    const indexItem = cart.findIndex(item => item.id === producto.id);
 
     if (indexItem !== -1) {
       // El producto ya está en el carrito, actualiza la cantidad
@@ -36,7 +33,7 @@ const ItemDetailContainer = () => {
       setCart(updatedCart);
     } else {
       // El producto no está en el carrito, agrégalo
-      setCart(prevCart => [...prevCart, { ...product, quantity }]);
+      setCart(prevCart => [...prevCart, { ...producto, quantity }]);
     }
 
     // Muestra el contenido del carrito en la consola 

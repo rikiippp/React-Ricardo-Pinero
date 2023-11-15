@@ -11,24 +11,24 @@ const ItemListContainer = () => {
   const [productos, setProductos] = useState([])
 
   useEffect(() => {
-    const db = getFirestore()
-
-    const itemsCollection = collection(db, "productos")
-
-    getDocs(itemsCollection).then((snapshot) => {
-      const docs = snapshot.docs.map((doc) => doc.data())
-      setProductos(docs)
-    })
-
-  }, [])
+    const db = getFirestore();
+    const itemsCollection = collection(db, "productos");
   
-  const filtrarProductos = productos.filter((producto) => producto.categoria === categoria)
+    getDocs(itemsCollection).then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setProductos(docs);
+    });
+  }, []);
+  
+  const filtrarProductos = categoria
+  ? productos.filter((productos) => productos.categoria === categoria)
+  : productos;
 
 
 
 
   return (
-    <div>
+    <div className='container-cards'> 
       {categoria ? <ItemList productos={filtrarProductos} /> : <ItemList productos={productos} />}
     </div>
   )

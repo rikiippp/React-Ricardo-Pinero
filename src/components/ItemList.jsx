@@ -8,7 +8,7 @@ const ItemList = ({productos}) => {
           <Item
             key={p.id}
             id={p.id}
-            img={p.img}
+            image={p.image}
             categoria={p.categoria}
             nombre={p.nombre}
             descripcion={p.descripcion}
