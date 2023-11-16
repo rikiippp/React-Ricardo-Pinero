@@ -137,7 +137,7 @@ const Checkout = () => {
                         />
                         <div className="error">{errors.address}</div>
                     </div>
-                    <button type="submit" className='button-form'>Enviar</button>
+                    <button type="submit" className='button-violet'>Enviar</button>
                 </form>
                 <ToastContainer />
             </div>

@@ -34,7 +34,7 @@ const Cart = () => {
       </div>
       <button onClick={limpiarCart} className="button-clearCart">Limpiar</button>
       <Link to='/checkout'>
-        <button className="button-form">Checkout</button>
+        <button className="button-violet">Checkout</button>
       </Link>
     </div>
   ) : (

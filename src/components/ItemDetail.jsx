@@ -18,19 +18,19 @@ const ItemDetail = ({ producto }) => {
     const resultado = quantity - 1
     if (quantity > 0) {
       setQuantity(resultado);
-    } 
+    }
   };
 
   const addProductToCart = () => addProduct(producto, quantity)
 
   return (
     <>
-      <Card shadow='3px 3px 3px #9fa6b2' border='1px solid #9fa6b2;' maxW='sm' m='20px auto' w='24rem' key={producto.id}>
+      <Card overflow='hidden' shadow='3px 3px 3px #9fa6b2' border='1px solid #9fa6b2;' maxW='sm' m='20px auto' w='24rem' key={producto.id}>
         <CardBody>
           <Stack>
             <img src={producto.image} alt="Imagenes de los productos" />
-            <Heading size='md' m='20px 0' fontSize='22px'>{producto.nombre}</Heading>
           </Stack>
+          <Heading size='md' m='20px 0' fontSize='22px'>{producto.nombre}</Heading>
           <Text fontSize='16px'>{producto.descripcion}</Text>
           <Text fontWeight='bold'>${producto.precio}</Text>
         </CardBody>

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
   return (
     <>
-      <Box as="nav" bg="#07110e">
+      <Box as="nav" bg="#271639">
         <Flex alignItems="center" justifyContent="space-between">
           <Box p="4">
             <Link to={"/"}>
@@ -17,7 +17,11 @@ const NavBar = () => {
           <Spacer />
           <Box>
             <Menu>
-              <MenuButton color="white" bg="#398378" p="2" pr="5" pl="5" borderRadius="5px">
+              <MenuButton color="white" p="2" pr="5" pl="5" borderRadius="5px" 
+              fontWeight='bold' 
+              fontSize='18px' 
+                borderBottom='2px solid #BE53B5' 
+                _hover={{ borderBottom:'2px solid #8ABE53'}}>
                 Productos
               </MenuButton>
               <MenuList border="1px" borderColor="#07110e">

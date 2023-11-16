@@ -44,7 +44,7 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-      <ItemDetail producto={producto} addProduct={addProductToCart} />
+      <ItemDetail producto={producto} addProduct={addProductToCart}/>
 
     </>
   )

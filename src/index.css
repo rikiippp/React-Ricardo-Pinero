@@ -120,7 +120,7 @@
     text-align: center;
 }
 
-.button-form {
+.button-violet {
     margin: 30px 20px;
     font-family: arial;
     font-weight: bold;
@@ -135,7 +135,7 @@
     background: linear-gradient(to top, #533983, #783983);
 }
 
-.button-form:hover {
+.button-violet:hover {
     color: #FFFFFF !important;
     background: #8D3F6F;
 }
@@ -200,9 +200,23 @@
     background: #B7A6D8;
 }
 /*--ESILOS CART VACIO--*/
-.containe-cartClean {
-    
+.container-cartClean {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.container-cartClean p {
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.container-cartClean img {
+    width: 300px;
+}
+
+
 
 /*--ESTILOS NRO DE ORDEN--*/
 .container-order {
