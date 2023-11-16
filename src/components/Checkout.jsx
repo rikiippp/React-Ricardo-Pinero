@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { collection, addDoc, getFirestore } from 'firebase/firestore';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
     const [nombre, setNombre] = useState('');
@@ -145,6 +146,11 @@ const Checkout = () => {
                 <div className='container-order'>
                     <h3>¡Gracias por tu compra! Pronto recibirás un correo con detalles. Utiliza el número de orden para rastrear tu envío. ¡Disfruta de tu compra!</h3>
                     <p>Nro de orden: {orderId}</p>
+                    <div>
+                        <Link to='/'>
+                            <button className='button-violet'>Volver al inicio</button>
+                        </Link>
+                    </div>
                 </div>
             )}
         </>
