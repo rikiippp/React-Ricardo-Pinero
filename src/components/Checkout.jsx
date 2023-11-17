@@ -20,20 +20,38 @@ const Checkout = () => {
 
     const db = getFirestore();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Validación
         const validationErrors = validateInputs();
+        setErrors(validationErrors);
+
+        // Si hay errores, no continúes con el envío del formulario
         if (Object.values(validationErrors).some((error) => error !== '')) {
-            setErrors(validationErrors);
             return;
         }
 
         // Si no hay errores, continúa con el envío del formulario
-        setFormSubmitted(true);
-        addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
-        notify();
+        try {
+            const docRef = await addDoc(ordersCollection, order);
+            setOrderId(docRef.id);
+            setFormSubmitted(true);
+            notify();
+            // Restablece el formulario después del envío exitoso
+            resetForm();
+        } catch (error) {
+            toast.error('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.', {
+                position: 'top-right',
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+            });
+        }
     };
 
     const validateInputs = () => {
@@ -70,7 +88,8 @@ const Checkout = () => {
 
         return validationErrors;
     };
-
+    
+    // Objeto que representa la orden a enviar a Firestore
     const order = {
         nombre,
         email,
@@ -78,8 +97,10 @@ const Checkout = () => {
         address,
     };
 
-    const ordersCollection = collection(db, 'MiOrden');
+    // Referencia a la colección "Orders" en Firestore
+    const ordersCollection = collection(db, 'Orders');
 
+    // Función para mostrar un mensaje de éxito al usuario
     const notify = () => {
         toast.success('Formulario completado con éxito!!', {
             position: 'top-right',
@@ -90,6 +111,20 @@ const Checkout = () => {
             draggable: true,
             progress: undefined,
             theme: 'dark',
+        });
+    };
+
+    // Función para restablecer el formulario después de enviarlo correctamente
+    const resetForm = () => {
+        setNombre('');
+        setEmail('');
+        setPhone('');
+        setAddress('');
+        setErrors({
+            nombre: '',
+            email: '',
+            phone: '',
+            address: '',
         });
     };
 
@@ -142,7 +177,7 @@ const Checkout = () => {
                 </form>
                 <ToastContainer />
             </div>
-            {formSubmitted && Object.values(errors).every((error) => error === '') && (
+            {formSubmitted && (
                 <div className='container-order'>
                     <h3>¡Gracias por tu compra! Pronto recibirás un correo con detalles. Utiliza el número de orden para rastrear tu envío. ¡Disfruta de tu compra!</h3>
                     <p>Nro de orden: {orderId}</p>
@@ -154,6 +189,7 @@ const Checkout = () => {
                 </div>
             )}
         </>
+
     );
 };
 

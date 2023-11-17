@@ -5,15 +5,18 @@ import { CartContext } from "../context/cartContext";
 
 const ItemDetail = ({ producto }) => {
 
-
+  // Declaro state para la cantidad
   const [quantity, setQuantity] = useState(0)
+  // Obtengo funcion de mi Context
   const { addProduct } = useContext(CartContext)
 
+  // Funcion incrementa la cantidad del producto
   const incrementQuantity = () => {
     const resultado = quantity + 1
     setQuantity(resultado);
   };
 
+  // Funcion decrementa la cantidad del producto
   const decrementQuantity = () => {
     const resultado = quantity - 1
     if (quantity > 0) {
@@ -21,6 +24,7 @@ const ItemDetail = ({ producto }) => {
     }
   };
 
+  // Funcion agregar producto al cart
   const addProductToCart = () => addProduct(producto, quantity)
 
   return (

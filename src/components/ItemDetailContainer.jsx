@@ -5,10 +5,13 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
+  // Estado para almacenar el carrito y el producto actual.
   const [cart, setCart] = useState([])
   const [producto, setProducto] = useState([])
+  // Obtengo el parámetro 'id' de la URL utilizando el hook useParams.
   const { id } = useParams();
 
+  // Efectt que se ejecuta al montar el componente para obtener detalles del producto.
   useEffect(() => {
 
     const db = getFirestore()
@@ -22,7 +25,7 @@ const ItemDetailContainer = () => {
     })
 }, [])
 
-
+  // Función para agregar un producto al carrito.
   const addProductToCart = (producto, quantity) => {
     const indexItem = cart.findIndex(item => item.id === producto.id);
 
